@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import background from "./bg.jpg";
 import { fetchWeather } from './api/fetchWeather';
 import './App.css';
 
@@ -17,7 +17,8 @@ const App = () => {
     }
 
     return (
-        <div className="main-container">
+        <div className="main-container" style={{ backgroundImage: `url(${background})` }}>
+            <h1>Weather Application</h1>
             <input type="text"className="search"placeholder="Search..."value={query}onChange={(e) => setQuery(e.target.value)}onKeyPress={search}/>
             {weather.main && (
                 <div className="city">
